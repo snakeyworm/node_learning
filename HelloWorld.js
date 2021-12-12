@@ -6,28 +6,21 @@ const http = require( "http" )
 const hostname = "127.0.0.1"
 const port = 3000
 
-const readline = require( "readline" ).createInterface( {
-    input: process.stdin,
-    output: process.stdout,
-} )
+function nextTickTest() {
 
+    console.log( "Hello ")
+    process.nextTick( () => {
+        console.log( "!!!!!!" )
+    } );
+    console.log( "World" )
+
+}
 
 const server = http.createServer( ( req, res ) => {
     res.status = 200
-    res.setHeader( "Content-Type", "text/plain" )
-    readline.question( "Do you wan't to play game? ", answer => {
-        let joshuaAnswer
-        switch ( answer[0] ) {
-            case "y":
-                joshuaAnswer = "How about Global Thermal Nuclear War?"
-                break
-            case "n":
-                joshuaAnswer = "Okay bye"
-                break
-        }
-        readline.close()
-        res.end( joshuaAnswer )
-    } )
+    res.setHeader( "Content-Type", "text/html" )
+    nextTickTest()
+    res.end( "<h1>Hello World!</h1>" )
 } )
 
 server.listen( port, hostname, () => {
