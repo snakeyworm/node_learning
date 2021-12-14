@@ -8,13 +8,8 @@ function getUser( name ) {
         .then( res => res.json() )
 }
 
-<<<<<<< HEAD
 // getUser( "caleb" )
 //     .then( res => console.log( res ) )
-=======
-getUser( "caleb" )
-    .then( res => console.log( res ) )
->>>>>>> 702211c690e69b2d0d3e12da8c57645e32b421b7
 
 
 async function getUserA( name ) {
@@ -28,10 +23,5 @@ async function getUserA( name ) {
 
 }
 
-<<<<<<< HEAD
 getUserA( "caleb" )
     .then( res =>  console.log( res ) )
-=======
-// getUserA( "caleb" )
-//     .then( res =>  console.log( res ) )
->>>>>>> 702211c690e69b2d0d3e12da8c57645e32b421b7
